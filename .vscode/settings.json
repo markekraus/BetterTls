@@ -1,6 +1,7 @@
 {
     "cSpell.words": [
-        "bnot"
+        "bnot",
+        "wildcards"
     ],
     "powershell.codeFormatting.alignPropertyValuePairs": true,
     "powershell.codeFormatting.ignoreOneLineBlock": true,
