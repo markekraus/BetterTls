@@ -54,7 +54,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-* [https://github.com/markekraus/BetterTls/blob/master/Docs/Get-Tls.md](https://github.com/markekraus/BetterTls/blob/master/Docs/Get-Tls.md)
-* [Disable-Tls](https://github.com/markekraus/BetterTls/blob/master/Docs/Disable-Tls.md)
-* [Enable-Tls](https://github.com/markekraus/BetterTls/blob/master/Docs/Enable-Tls.md)
-* [Set-Tls](https://github.com/markekraus/BetterTls/blob/master/Docs/Set-Tls.md)
+[https://github.com/markekraus/BetterTls/blob/master/Docs/Get-Tls.md](https://github.com/markekraus/BetterTls/blob/master/Docs/Get-Tls.md)
+[Disable-Tls](https://github.com/markekraus/BetterTls/blob/master/Docs/Disable-Tls.md)
+[Enable-Tls](https://github.com/markekraus/BetterTls/blob/master/Docs/Enable-Tls.md)
+[Set-Tls](https://github.com/markekraus/BetterTls/blob/master/Docs/Set-Tls.md)

@@ -12,13 +12,14 @@ A Module for best practice enabling and disabling of TLS protocols in Windows Po
 
 ## BetterTls Cmdlets
 ### [Disable-Tls](Disable-Tls.md)
-{{Fill in the Synopsis}}
+Disables one or more supplied TLS versions without affecting other settings.
 
 ### [Enable-Tls](Enable-Tls.md)
-{{Fill in the Synopsis}}
+Enables one or more supplied TLS versions without affecting other settings.
 
 ### [Get-Tls](Get-Tls.md)
-{{Fill in the Synopsis}}
+Gets the current TLS configuration.
 
 ### [Set-Tls](Set-Tls.md)
-{{Fill in the Synopsis}}
+Sets the TLS settings with only those supplied.
+

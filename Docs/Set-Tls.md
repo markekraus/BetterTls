@@ -239,7 +239,7 @@ This function is called by `Enable-Tls` and `Disable-Tls`.
 
 ## RELATED LINKS
 
-* [https://github.com/markekraus/BetterTls/blob/master/Docs/Set-Tls.md](https://github.com/markekraus/BetterTls/blob/master/Docs/Set-Tls.md)
-* [Disable-Tls](https://github.com/markekraus/BetterTls/blob/master/Docs/Disable-Tls.md)
-* [Enable-Tls](https://github.com/markekraus/BetterTls/blob/master/Docs/Enable-Tls.md)
-* [Get-Tls](https://github.com/markekraus/BetterTls/blob/master/Docs/Get-Tls.md)
+[https://github.com/markekraus/BetterTls/blob/master/Docs/Set-Tls.md](https://github.com/markekraus/BetterTls/blob/master/Docs/Set-Tls.md)
+[Disable-Tls](https://github.com/markekraus/BetterTls/blob/master/Docs/Disable-Tls.md)
+[Enable-Tls](https://github.com/markekraus/BetterTls/blob/master/Docs/Enable-Tls.md)
+[Get-Tls](https://github.com/markekraus/BetterTls/blob/master/Docs/Get-Tls.md)
