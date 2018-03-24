@@ -14,14 +14,12 @@ Sets the TLS settings with only those supplied.
 ## SYNTAX
 
 ### Switch (Default)
-
 ```
 Set-Tls [-Tls12] [-Tls11] [-Tls] [-Ssl3] [-PassThru] [-Caller <PSCmdlet>] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
 ### SecurityProtocol
-
 ```
 Set-Tls -SecurityProtocol <SecurityProtocolType> [-PassThru] [-Caller <PSCmdlet>] [-WhatIf] [-Confirm]
  [<CommonParameters>]
@@ -222,7 +220,6 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
