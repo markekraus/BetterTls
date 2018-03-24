@@ -21,7 +21,9 @@ $PSDefaultParameterValues['Install-Module:Scope'] = 'CurrentUser'
     @{Name = 'Psake'; MaximumVersion = '4.7.0'}
     @{Name = 'PSDeploy'; MaximumVersion = '0.2.3'}
     @{Name = 'BuildHelpers'; MaximumVersion = '1.0.1'}
-    @{Name = 'PSScriptAnalyzer'; MaximumVersion = '1.0.1'}
+    @{Name = 'PSScriptAnalyzer'; MaximumVersion = '1.16.1'}
+    @{Name = 'PlatyPS'; MaximumVersion = '0.9.0'}
+
 ) | Foreach-Object {
     $Params = $_
     Install-Module -Force @Params
@@ -29,6 +31,7 @@ $PSDefaultParameterValues['Install-Module:Scope'] = 'CurrentUser'
 }
 
 Set-BuildEnvironment -ErrorAction SilentlyContinue
+Set-BuildEnvironment -ErrorAction SilentlyContinue -BuildOutput '$ProjectPath\..\bin\$ProjectName' -Path src -Force
 
 Invoke-psake -buildFile .\psake.ps1 -taskList $Task -nologo
 exit ([int](-not $psake.build_success))
