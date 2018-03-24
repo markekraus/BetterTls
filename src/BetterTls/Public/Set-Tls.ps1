@@ -49,7 +49,7 @@ function Set-Tls {
         if ( $PSCmdlet.ParameterSetName -eq 'SecurityProtocol' ) {
             if ($TlsSettings -eq $SecurityProtocol) {
                 Write-Verbose "TLS Settings unchanged."
-            } elseif ($Caller.ShouldProcess("Changing [System.Net.ServicePointManager] from '$TlsSettings' to '$SecurityProtocol'")) {
+            } elseif ($Caller.ShouldProcess("Changing [System.Net.ServicePointManager]::SecurityProtocol from '$TlsSettings' to '$SecurityProtocol'")) {
                 [System.Net.ServicePointManager]::SecurityProtocol = $SecurityProtocol
             }
             if ($PassThru.IsPresent) {
