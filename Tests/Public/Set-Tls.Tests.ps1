@@ -1,7 +1,7 @@
-$ModulePath = "$PSScriptRoot\..\..\BetterTls\BetterTls.psd1"
+$ModulePath = "$ENV:BHBuildOutput\$ENV:BHProjectName.psd1"
 Import-Module $ModulePath -Force
 
-Describe "Set-Tls" {
+Describe "Set-Tls" -Tag 'Unit' {
     BeforeAll {
         $Original = [System.Net.ServicePointManager]::SecurityProtocol
         $OriginalPreference = $ConfirmPreference
@@ -42,6 +42,12 @@ Describe "Set-Tls" {
         param($Type)
         Set-Tls -SecurityProtocol $Type
         Get-Tls | Should -Be $Type
+    }
+
+    It "Does not Change the settings if they are already as requested" {
+        $Before = Get-Tls
+        Set-Tls -SecurityProtocol $Before
+        Get-Tls | Should -Be $Before
     }
 
     It "Supports PassThru on SecurityProtocolType" {

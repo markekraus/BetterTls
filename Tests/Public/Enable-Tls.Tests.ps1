@@ -1,7 +1,7 @@
-$ModulePath = "$PSScriptRoot\..\..\BetterTls\BetterTls.psd1"
+$ModulePath = "$ENV:BHBuildOutput\$ENV:BHProjectName.psd1"
 Import-Module $ModulePath -Force
 
-Describe 'Enable-Tls' {
+Describe 'Enable-Tls' -Tag 'Unit' {
     BeforeAll {
         $Original = [System.Net.ServicePointManager]::SecurityProtocol
         $OriginalPreference = $ConfirmPreference
