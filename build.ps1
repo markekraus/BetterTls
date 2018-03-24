@@ -18,19 +18,20 @@ Get-PackageProvider -Name NuGet -ForceBootstrap | Out-Null
 $PSDefaultParameterValues['Install-Module:Scope'] = 'CurrentUser'
 
 @(
-    @{Name = 'Psake'; MaximumVersion = '4.7.0'}
-    @{Name = 'PSDeploy'; MaximumVersion = '0.2.3'}
-    @{Name = 'BuildHelpers'; MaximumVersion = '1.0.1'}
-    @{Name = 'PSScriptAnalyzer'; MaximumVersion = '1.16.1'}
-    @{Name = 'PlatyPS'; MaximumVersion = '0.9.0'}
+    @{Name = 'Psake'; RequiredVersion = '4.7.0'}
+    @{Name = 'PSDeploy'; RequiredVersion = '0.2.3'}
+    @{Name = 'BuildHelpers'; RequiredVersion = '1.0.1'}
+    @{Name = 'PSScriptAnalyzer'; RequiredVersion = '1.16.1'}
+    @{Name = 'PlatyPS'; RequiredVersion = '0.9.0' }
 
 ) | Foreach-Object {
     $Params = $_
+    'Proceesing Module {0} Version = {1}' -f $Params.Name, $Params.RequiredVersion
     if ($ENV:APPVEYOR) {
-        Install-Module -Force @Params
+        Install-Module -Force @Params -Verbose
     }
-    Remove-Module -Force -Name $Params.Name -ErrorAction SilentlyContinue
-    Import-Module -Global -Force @Params
+    Remove-Module -Force -Name $Params.Name -ErrorAction SilentlyContinue -Verbose
+    Import-Module -Global -Force @Params -Verbose
 }
 
 Set-BuildEnvironment -ErrorAction SilentlyContinue

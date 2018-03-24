@@ -212,6 +212,7 @@ Task Deploy -depends Init {
         $ENV:BHBranchName -eq "master" -and
         $ENV:BHCommitMessage -match '!deploy'
     ) {
+        Import-Module -Force -Global $DestinationFolder
         $Params = @{
             Path  = $ProjectRoot
             Force = $true
