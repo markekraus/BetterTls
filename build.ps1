@@ -26,8 +26,7 @@ $PSDefaultParameterValues['Install-Module:Scope'] = 'CurrentUser'
 
 ) | Foreach-Object {
     $Params = $_
-    $modules = Get-Module -Name $Params.Name -ListAvailable
-    if ($Params.MaximumVersion -notin $modules.Version ) {
+    if ($ENV:APPVEYOR) {
         Install-Module -Force @Params
     }
     Remove-Module -Force -Name $Params.Name -ErrorAction SilentlyContinue
