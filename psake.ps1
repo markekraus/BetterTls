@@ -152,8 +152,7 @@ Task Test -depends Init {
 
 Task BuildDocs -depends Init, Build {
     $lines
-    # New-MarkdownHelp will error if the files already exist
-    Import-Module $DestinationManifest -Force
+    Import-Module $DestinationManifest -Force -Global
 
     $Params = @{
         Module                = $ModuleName

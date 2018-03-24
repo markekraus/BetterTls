@@ -26,7 +26,11 @@ $PSDefaultParameterValues['Install-Module:Scope'] = 'CurrentUser'
 
 ) | Foreach-Object {
     $Params = $_
-    Install-Module -Force @Params
+    $modules = Get-Module -Name $Params.Name -ListAvailable
+    if ($Params.MaximumVersion -notin $modules.Version ) {
+        Install-Module -Force @Params
+    }
+    Remove-Module -Force -Name $Params.Name -ErrorAction SilentlyContinue
     Import-Module -Global -Force @Params
 }
 
