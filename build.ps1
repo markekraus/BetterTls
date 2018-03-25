@@ -19,6 +19,7 @@ $PSDefaultParameterValues['Install-Module:Scope'] = 'CurrentUser'
 
 @(
     @{Name = 'Psake'; RequiredVersion = '4.7.0'}
+    @{Name = 'Pester'; RequiredVersion = '4.3.1'}
     @{Name = 'PSDeploy'; RequiredVersion = '0.2.3'}
     @{Name = 'BuildHelpers'; RequiredVersion = '1.0.1'}
     @{Name = 'PSScriptAnalyzer'; RequiredVersion = '1.16.1'}
