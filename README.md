@@ -5,7 +5,7 @@
 BetterTls is a PowerShell Module to manage TLS settings for `Invoke-WebRequest` and `Invoke-RestMethod` in Windows PowerShell 5.1 and older.
 
 In Windows PowerShell 5.1 and older, only SSL 3.0 and TLS 1.0 are enabled by default.
-Many modern APIs have begun moving to support only TLS 1.2.
+Many modern APIs, including GitHub, have begun moving to support only TLS 1.2.
 If you attempt to use those APIs with `Invoke-WebRequest` and/or `Invoke-RestMethod` you will received the following error:
 
 ```none
@@ -24,15 +24,19 @@ At line:1 char:1
     + FullyQualifiedErrorId : WebCmdletWebResponseException,Microsoft.PowerShell.Commands.InvokeWebRequestCommand
 ```
 
-This module provides best practices ways to enable and disable TLS protocols.
+This module provides best practice ways to enable and disable TLS protocols.
 Many module and script authors are setting these directly without prompting for user consent.
 That practice is dangerous as it may decrease the user's security or break access to previously working APIs.
-These settings affect .NET APIs beyond just `Invoke-WebRequest` and/or `Invoke-RestMethod`
-and their affects persist for the duration of the user's PowerShell Session
-These authors mean well, but may not fully understand what the implications of their actions.
+These settings affect .NET APIs beyond just `Invoke-WebRequest` and `Invoke-RestMethod`.
+Additionally, the settings persist for the duration of the user's PowerShell Session at the AppDomain level.
+These authors mean well, but may not fully understand all the implications of their actions.
 
-The functions in this module require user consent before making changes to the TLS settings.
-This can be bypassed for automation jobs.
+The functions in this module require user consent before making changes to the TLS settings,
+but only when settings are actually required.
+If the user's settings already include the code authors desired settings,
+then the user is not prompted and no changes are made.
+
+The confirmation prompts can be suppressed for automation jobs.
 However, when working with user facing and interactive code, the prompts should not be suppressed.
 This allows the user to be made aware of the changes being made to their session.
 
