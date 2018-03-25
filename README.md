@@ -47,7 +47,7 @@ For more information on this and other differences please [see my blog](https://
 
 ## Installation
 
-BetterTls is available on the PowerShell Gallery. To install to the following:
+BetterTls is available on the [PowerShell Gallery](https://www.powershellgallery.com/packages/BetterTls/). To install to the following:
 
 ```powershell
 Install-Module -Scope CurrentUser -Name BetterTls
