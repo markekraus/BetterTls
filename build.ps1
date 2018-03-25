@@ -19,7 +19,7 @@ $PSDefaultParameterValues['Install-Module:Scope'] = 'CurrentUser'
 
 @(
     @{Name = 'Psake'; RequiredVersion = '4.7.0'}
-    @{Name = 'Pester'; RequiredVersion = '4.3.1'}
+    @{Name = 'Pester'; RequiredVersion = '4.3.1'; SkipPublisherCheck = $true}
     @{Name = 'PSDeploy'; RequiredVersion = '0.2.3'}
     @{Name = 'BuildHelpers'; RequiredVersion = '1.0.1'}
     @{Name = 'PSScriptAnalyzer'; RequiredVersion = '1.16.1'}
@@ -29,10 +29,10 @@ $PSDefaultParameterValues['Install-Module:Scope'] = 'CurrentUser'
     $Params = $_
     'Proceesing Module {0} Version = {1}' -f $Params.Name, $Params.RequiredVersion
     if ($ENV:APPVEYOR) {
-        Install-Module -Force @Params -Verbose
+        Install-Module -Force @Params
     }
-    Remove-Module -Force -Name $Params.Name -ErrorAction SilentlyContinue -Verbose
-    Import-Module -Global -Force @Params -Verbose
+    Remove-Module -Force -Name $Params.Name -ErrorAction SilentlyContinue
+    Import-Module -Global -Force @Params
 }
 
 Set-BuildEnvironment -ErrorAction SilentlyContinue
