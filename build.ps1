@@ -32,6 +32,7 @@ $PSDefaultParameterValues['Install-Module:Scope'] = 'CurrentUser'
         Install-Module -Force @Params
     }
     Remove-Module -Force -Name $Params.Name -ErrorAction SilentlyContinue
+    try {$Params.Remove('SkipPublisherCheck')}catch {}
     Import-Module -Global -Force @Params
 }
 
