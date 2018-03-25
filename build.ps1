@@ -37,7 +37,9 @@ $PSDefaultParameterValues['Install-Module:Scope'] = 'CurrentUser'
 }
 
 Set-BuildEnvironment -ErrorAction SilentlyContinue
+Get-Item ENV:BH* | Format-Table -aut | Out-String
 Set-BuildEnvironment -ErrorAction SilentlyContinue -BuildOutput '$ProjectPath\..\bin\$ProjectName' -Path src -Force
+Get-Item ENV:BH* | Format-Table -aut | Out-String
 
 Invoke-psake -buildFile .\psake.ps1 -taskList $Task -nologo
 exit ([int](-not $psake.build_success))
