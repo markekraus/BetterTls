@@ -34,7 +34,7 @@ or break access to previously working endpoints.
 
 ```powershell
 # Enable TLS 1.2
-Disable-Tls -Tls12
+Enable-Tls -Tls12
 ```
 
 The above example will enable TLS 1.2.
